@@ -11,6 +11,7 @@ Data for the budget tracker app is persisted in a database so consecutice visits
 The live deployed application can be found [HERE](https://budget-tracker-kb.herokuapp.com/).
 
 
+<img width="958" alt="Budget trucker" src="https://user-images.githubusercontent.com/80425583/131092050-fd3c37da-85bc-489d-9b52-5f32019138f5.png">
 
 
 
