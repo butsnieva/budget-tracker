@@ -1,11 +1,23 @@
-body {
-  font-size: 120%;
-  font-family: Arial;
+:root {
+    --bg: #f2faed;
+  	--pale-gray: #dddddd;
+    --cust1: #354f52;
+    --cust2: #658d83;
+    --cust3: #96c09f;
+    --cust4: #eff8e9;
+    --divider: rgba(255, 151, 72, 0.773);
+    --sub-btn: #feab6cc5;
+    --white: #ffffff;
+    --light-gray: #dfdfdf;
+    --gray: #808080;
+
 }
 
-button, input {
-  font-size: 100%;
-  font-family: Arial;
+body {
+  font-size: 120%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 300;
+  background-color: var(--bg);
 }
 
 table {
@@ -13,39 +25,166 @@ table {
 }
 
 td, th {
-  border: 1px solid #dddddd;
+  border: 1px solid var(--pale-gray);
   text-align: left;
-  padding: 8px;
+  padding: 6px;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: var(--pale-gray);
 }
 
 .error {
-  color: red;
+  color: rgb(170, 4, 4);
 }
 
 .wrapper {
-  margin: 0 auto;
-  max-width: 825px;
+  margin: auto;
+  max-width: 90%;
   text-align: center;
 }
 
 .total {
   font-size: 150%;
-  text-decoration: underline;
-}
-
-.form {
-  margin-top: 25px;
-  width: 100%;
+  padding-top: 15px;
+  font-weight:500;
 }
 
 .transactions {
   text-align: left;
-  max-height: 300px;
+  max-height: 250px;
   overflow: auto;
   width: 90%;
   margin: 0 auto;
+}
+
+.form-row {
+  margin: 10px;
+}
+
+.row {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+tr {
+font-size: 14px;
+}
+
+tr:nth-child(even) {
+  background-color: var(--cust3);
+  color: var(--white);
+  
+}
+
+tr:nth-child(odd) {
+  color: var(--gray);
+}
+
+td, th {
+  border: none;
+}
+
+th {
+  font-family: 'Montserrat', sans-serif !important;
+  background-color: var(--cust2);
+  color: var(--white);
+  font-weight: 500;
+  font-size: 18px;
+}
+
+button {
+  color: var(--white);
+  border: none;
+  width: 250px;
+  padding: 12px;
+  margin: 5px 0;
+  border-radius: 20px;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+#add-btn {
+  background-color: var(--cust3);
+}
+#add-btn:hover {
+  background-color: var(--cust2);
+}
+
+#sub-btn {
+  background-color: var(--sub-btn);
+}
+#sub-btn:hover {
+  background-color: var(--divider);
+}
+
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif !important;
+  color: var(--cust1);
+  font-weight: 300;
+  margin: 5px;
+}
+
+label {
+  display: block;
+  text-align: start;
+  margin-left: 20px;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--gray);
+}
+
+input {
+  border: 1px solid var(--light-gray);
+  width: 90%;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+hr {
+  width:125px;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 25px;
+  background-color: var(--divider);
+  height: 2px;
+  border: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1 1 30%;
+  margin-right: 5%;
+  height: 350px;
+}
+
+.flex-2 {
+  flex: 1 1 60%;
+}
+
+.r1 {
+}
+
+
+.r3 {
+
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  background: white;
+}
+
+.form {
+  margin-top: 40px;
 }

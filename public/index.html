@@ -8,6 +8,9 @@
   <link rel="shortcut icon" href="icons/icon-192x192.png" type="image/x-icon">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 
 <!-- link to manifest -->
@@ -17,32 +20,55 @@
 </head>
 <body>
   <div class="wrapper">
-    <div class="total">
-      <div class="total">Your total is: $<span id="total">0</span></div>
+          <div class="total">
+        <h1 class="total">Your current balance: $<span id="total">0</span></h1>
+      </div>
+
+    <div class="flex">
+   <div class="row r1 flex-1">
+      <h2>New Record</h2>
+
+      <hr>
+      <div class="form">
+        <div class="form-row">
+          <label>Transaction Details: </label>
+          <input type="text" id="t-name" placeholder="" />
+        </div>
+        <div class="form-row">
+          <label>Amount: </label>
+          <input type="number" min="0" id="t-amount" placeholder="" />
+        </div>
+        <div class="form-row">
+          <button id="add-btn"><i class="fa fa-plus buttons"></i>&nbsp; Add Funds</button>
+          <button id="sub-btn"><i class="fa fa-minus"></i>&nbsp; Subtract Funds</button>
+          <p class="error"></p>
+        </div>
+      </div>    
     </div>
 
-    <div class="form">
-      <input type="text" id="t-name" placeholder="Name of transaction" />
-      <input type="number" min="0" id="t-amount" placeholder="Transaction amount" />
-      <button id="add-btn"><i class="fa fa-plus buttons"></i> Add Funds</button>
-      <button id="sub-btn"><i class="fa fa-minus"></i> Subtract Funds</button>
-      <p class="error"></p>
+    
+    <div class="row r2 flex-2">
+      <h2>Transaction History</h2>
+      <hr>
+      <div class="transactions" style="text-align: center">
+        <table>
+          <thead >
+            <th>Transaction details</th>
+            <th>Amount</th>
+          </thead>
+          <tbody id="tbody">
+          </tbody>
+        </table>
+      </div>
+      </div>
     </div>
-
-    <div class="transactions">
-      <table>
-        <thead>
-          <th>Transaction</th>
-          <th>Amount</th>
-        </thead>
-        <tbody id="tbody">
-          
-        </tbody>
-      </table>
+    <div class="row r3">
+      <h2>Total Over Time</h2>
+      <hr>
+      <canvas id="myChart"></canvas>
     </div>
     
-    <canvas id="myChart"></canvas>
-  </div>
+  
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   

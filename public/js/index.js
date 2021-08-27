@@ -65,18 +65,35 @@ function populateChart() {
   let ctx = document.getElementById("myChart").getContext("2d");
 
   myChart = new Chart(ctx, {
-    type: 'line',
-      data: {
-        labels,
-        datasets: [{
-            label: "Total Over Time",
-            fill: true,
-            backgroundColor: "#6666ff",
-            data
-        }]
-    }
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Total Over Time',
+          fill: true,
+          //backgroundColor: 'rgba(82, 121, 111, 0.3)',
+          data,
+          backgroundColor(context) {
+            const index = context.dataIndex;
+            const value = context.dataset.data[index];
+            return value < 0
+              ? 'rgba(255, 151, 72, 0.5)'
+              : 'rgba(82, 121, 111, 0.3)';
+          },
+        },
+      ],
+    },
+    options: {
+      legend: {
+        display: false,
+      },
+    },
   });
 }
+var chartEl = document.getElementById('myChart');
+chartEl.height = 70;
+
 
 function sendTransaction(isAdding) {
   let nameEl = document.querySelector("#t-name");
