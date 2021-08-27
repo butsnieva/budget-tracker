@@ -34,6 +34,9 @@ function saveRecord(record) {
 
   // add a record to indexDB
   pendingStore.add(record);
+  window.alert(
+    'You are currently offline. Your transaction has been saved locally and will update in your account once you connect to the internet.'
+  );
 }
 
 // called when internet connection is detected
@@ -62,7 +65,11 @@ function checkDatabase() {
           const transaction = db.transaction(['pending'], 'readwrite');
           const pendingStore = transaction.objectStore('pending');
           pendingStore.clear();
-        });
+          window.alert(
+            'You are now online. Your account has been successfully updated to include the transactions made while you were offline.'
+          );
+        })
+        .catch(err => console.log(err));
     }
   };
 }
